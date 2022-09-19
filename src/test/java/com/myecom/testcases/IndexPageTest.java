@@ -1,5 +1,7 @@
 package com.myecom.testcases;
 
+import java.time.Duration;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -47,6 +49,7 @@ public class IndexPageTest extends BaseClass
 		driver.get(prop.getProperty("baseurl"));
 		index = new IndexPagePom();
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	}
 	
 	@AfterMethod
@@ -58,16 +61,16 @@ public class IndexPageTest extends BaseClass
 	@Test
 	public void validateLogo() 
 	{
-		index = new IndexPagePom();
-		boolean res = index.validateLogo();
-		Assert.assertTrue(res);
+		//index = new IndexPagePom();
+		boolean ref = index.validateLogo();
+		Assert.assertTrue(ref);
 	}
 	
 	@Test
 	public void getTitleOfPage() 
 	{
 		logger = extent.createTest("getTitleOfPage");
-		index = new IndexPagePom();
+		//index = new IndexPagePom();
 		String title = index.getTitleOfPage();
 		//Assert.assertTrue(true, title);
 		logger.log(Status.INFO, title);

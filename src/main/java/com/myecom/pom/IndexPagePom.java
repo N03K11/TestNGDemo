@@ -13,8 +13,9 @@ public class IndexPagePom extends BaseClass
 	public IndexPagePom() 
 	{
 		PageFactory.initElements(driver, this);
+		
 	}
-	
+
 	@FindBy(xpath = "//img[@alt='My Store']")
 	public WebElement logo;
 
@@ -27,9 +28,22 @@ public class IndexPagePom extends BaseClass
 	@FindBy(name = "submit_search")
 	public WebElement searchButton;
 	
+	@FindBy(xpath = "//div[@class ='left-block']//img[@alt = 'Printed Summer Dress'][1]")
+	public WebElement dressclick;
 	
+	@FindBy(xpath = "//a[@title = 'View my shopping cart']")
+	public WebElement cartclick;
 	
+	@FindBy(id = "newsletter-input")
+	public WebElement newsletter;
+	
+	@FindBy(xpath = "//a[text() = 'Contact us' ]")
+	public WebElement contactusclick;
+	
+	@FindBy(xpath = "//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']//a[@title='Women']")
+	public WebElement clickonwomen;
 //to check if LOGO is displayed or not
+	
 	public boolean validateLogo() 
 	{
 		if(logo.isDisplayed()) 

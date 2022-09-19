@@ -22,6 +22,7 @@ public class SignInPageTest extends BaseClass
 	IndexPagePom index;
 	SignInPagePOM signin;
 	ExcelSheethandle data;
+	SignInPageTest signintest;
 	
 	
 	@BeforeMethod
@@ -100,12 +101,14 @@ public class SignInPageTest extends BaseClass
 		Sheet s = data.getSheet(data.getExcelFile(), "SignUp");
 		String emaildata = data.getSingleCellValue(s, 1, 0);
 		signin.createNewAccount(emaildata);
+		Thread.sleep(3000);
 	}
 	
 	@Test
 	public void signUpPage() throws Exception
 	{
-		signin.createEmail();
+		signintest.createAccount();
+		//signin.createEmail();
 		signin.clickOnCreate();
 		data = new ExcelSheethandle();
 		Sheet s = data.getSheet(data.getExcelFile(), "SignUp");
