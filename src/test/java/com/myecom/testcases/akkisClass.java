@@ -4,7 +4,7 @@ public class akkisClass {
 	
 	public void akki() {
 		System.out.println("Akshay");
-		System.out.println("This is omkar");
+		System.out.println("This is omkar update");
 	}
 	
 	
