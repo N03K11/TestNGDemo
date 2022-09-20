@@ -1,4 +1,4 @@
-package com.myecom.base;
+package com.myecom.pom;
 
 
 import java.time.Duration;
@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.myecom.base.BaseClass;
 import com.myecom.pom.IndexPagePom;
 
 public class SignInPagePOM extends BaseClass

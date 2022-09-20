@@ -3,14 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.myecom.testcases.SignInPageTest">
+      <class name="com.myecom.testcases.IndexPageTest">
         <methods>
           <include name="readProperty"/>
           <include name="tearDown"/>
+          <include name="flushReport"/>
+          <include name="generateExtentReport"/>
+          <include name="clickOnDress"/>
           <include name="setUp"/>
-          <include name="signUpPage"/>
         </methods>
-      </class> <!-- com.myecom.testcases.SignInPageTest -->
+      </class> <!-- com.myecom.testcases.IndexPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -14,8 +14,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.myecom.base.BaseClass;
-import com.myecom.base.ProductListingPOM;
-import com.myecom.base.SignInPagePOM;
+import com.myecom.pom.ProductListingPOM;
+import com.myecom.pom.SignInPagePOM;
 import com.myecom.pom.IndexPagePom;
 
 public class IndexPageTest extends BaseClass
@@ -33,7 +33,6 @@ public class IndexPageTest extends BaseClass
 		ExtentSparkReporter generateReport = new ExtentSparkReporter(projectPath+"//extentreport/Extent Report.html");
 		extent = new ExtentReports();
 		extent.attachReporter(generateReport);
-		
 	}
 	
 	@AfterTest
@@ -46,8 +45,8 @@ public class IndexPageTest extends BaseClass
 	public void setUp() 
 	{
 		loadApplication();
-		driver.get(prop.getProperty("baseurl"));
 		index = new IndexPagePom();
+		driver.get(prop.getProperty("baseurl"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	}
@@ -61,7 +60,6 @@ public class IndexPageTest extends BaseClass
 	@Test
 	public void validateLogo() 
 	{
-		//index = new IndexPagePom();
 		boolean ref = index.validateLogo();
 		Assert.assertTrue(ref);
 	}
@@ -70,7 +68,6 @@ public class IndexPageTest extends BaseClass
 	public void getTitleOfPage() 
 	{
 		logger = extent.createTest("getTitleOfPage");
-		//index = new IndexPagePom();
 		String title = index.getTitleOfPage();
 		//Assert.assertTrue(true, title);
 		logger.log(Status.INFO, title);
@@ -109,7 +106,6 @@ public class IndexPageTest extends BaseClass
 	@Test
 	public void search() throws InterruptedException 
 	{
-		index = new IndexPagePom();
 		index.searchButton();
 		Thread.sleep(5000);
 	}
@@ -117,7 +113,6 @@ public class IndexPageTest extends BaseClass
 	@Test
 	public void searchTextValue() 
 	{
-		index = new IndexPagePom();
 		index.searchTextValue();
 		boolean case1 = true;
 		Assert.assertTrue(case1);
@@ -126,20 +121,16 @@ public class IndexPageTest extends BaseClass
 	@Test
 	public void selectDropDown() throws InterruptedException 
 	{
-		
-		index = new IndexPagePom();
 		index.searchButton();
 		Thread.sleep(3000);
 		product = new ProductListingPOM();
 		product.dropDown();
 		Thread.sleep(5000);
-		
 	}
 	
 	@Test
 	public void clickOnDress() throws InterruptedException 
 	{
-		index = new IndexPagePom();
 		index.searchButton();
 		product = new ProductListingPOM();
 		product.dressClick();

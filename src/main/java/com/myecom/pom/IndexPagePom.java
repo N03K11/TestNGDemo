@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.myecom.base.BaseClass;
-import com.myecom.base.ProductListingPOM;
-import com.myecom.base.SignInPagePOM;
+import com.myecom.pom.ProductListingPOM;
+import com.myecom.pom.SignInPagePOM;
 
 public class IndexPagePom extends BaseClass
 {
@@ -31,17 +31,7 @@ public class IndexPagePom extends BaseClass
 	@FindBy(xpath = "//div[@class ='left-block']//img[@alt = 'Printed Summer Dress'][1]")
 	public WebElement dressclick;
 	
-	@FindBy(xpath = "//a[@title = 'View my shopping cart']")
-	public WebElement cartclick;
 	
-	@FindBy(id = "newsletter-input")
-	public WebElement newsletter;
-	
-	@FindBy(xpath = "//a[text() = 'Contact us' ]")
-	public WebElement contactusclick;
-	
-	@FindBy(xpath = "//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']//a[@title='Women']")
-	public WebElement clickonwomen;
 //to check if LOGO is displayed or not
 	
 	public boolean validateLogo() 
@@ -100,16 +90,6 @@ public class IndexPagePom extends BaseClass
 		return new SignInPagePOM();
 	}
 	
-	public void demo() 
-	{
-		System.out.println("git push");
-	}
-	
-	public void demo1() 
-	{
-		System.out.println("git push again");
-		System.out.println("Updated Method");
-	}
 	
 
 

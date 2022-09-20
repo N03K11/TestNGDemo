@@ -13,7 +13,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.myecom.base.BaseClass;
-import com.myecom.base.SignInPagePOM;
+import com.myecom.pom.SignInPagePOM;
 import com.myecom.pom.IndexPagePom;
 import com.myecom.utility.ExcelSheethandle;
 
@@ -107,17 +107,16 @@ public class SignInPageTest extends BaseClass
 	@Test
 	public void signUpPage() throws Exception
 	{
-		signintest.createAccount();
-		//signin.createEmail();
-		signin.clickOnCreate();
 		data = new ExcelSheethandle();
 		Sheet s = data.getSheet(data.getExcelFile(), "SignUp");
+		String emaildata = data.getSingleCellValue(s, 1, 0);
+		signin.createNewAccount(emaildata);
+		signin.clickOnCreate();
 		HashMap<String, Object> logindata = data.getExcelSheetData(s);
 		signin.signUpCreate((String)logindata.get("First Name"), (String)logindata.get("Last Name"), (String) logindata.get("Mobile Number"));
 		Thread.sleep(3000);
 		signin.signUpDropDown();
 		Thread.sleep(3000);
-	
 	}
 	
 
