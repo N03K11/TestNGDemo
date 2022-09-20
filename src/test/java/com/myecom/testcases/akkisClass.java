@@ -5,4 +5,5 @@ public class akkisClass {
 	public void akki() {
 		System.out.println("Akshay");
 	}
+	
 }
