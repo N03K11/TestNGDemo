@@ -27,7 +27,7 @@ public class IndexPageTest extends BaseClass
 	SoftAssert softassert = new SoftAssert();
 	ExtentReports extent;
 	ExtentTest logger;
-
+	
 	@BeforeMethod
 	public void generateExtentReport() 
 	{
@@ -42,13 +42,14 @@ public class IndexPageTest extends BaseClass
 		extent.flush();
 	}
 	
-	@Parameters("browser")
+	
 	@BeforeMethod
-	public void setUp(String browser) 
+	public void setUp() 
 	{
-		loadApplication(browser);
-		index = new IndexPagePom();
+		loadApplication();
 		driver.get(prop.getProperty("baseurl"));
+		index = new IndexPagePom();
+		signin = new SignInPagePOM();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	}
@@ -86,10 +87,10 @@ public class IndexPageTest extends BaseClass
 	}*/
 	
 	@Test
-	public SignInPagePOM signInClick() 
+	public void signInClick() 
 	{
-		signin.signIn();
-		return new SignInPagePOM();
+		
+		index.signInButton();
 	}
 	
 	@Test

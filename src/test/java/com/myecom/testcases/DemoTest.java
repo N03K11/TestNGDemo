@@ -17,11 +17,11 @@ import com.myecom.pom.IndexPagePom;
 @Listeners(MyListener.class)
 public class DemoTest extends BaseClass 
 {
-	@Parameters("browser")
+	
 	@BeforeMethod
-	public void setUp(String browser) 
+	public void setUp() 
 	{
-		loadApplication(browser);
+		loadApplication();
 		driver.get(prop.getProperty("baseurl"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));

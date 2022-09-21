@@ -17,7 +17,6 @@ import org.testng.annotations.Parameters;
 
 public class BaseClass 
 {
-	
 	public static WebDriver driver;
 	public static Properties prop = new Properties();
 	public static String projectPath = System.getProperty("user.dir");
@@ -25,15 +24,12 @@ public class BaseClass
 	@BeforeMethod
 	public void readProperty() throws IOException 
 	{
-		
 		FileInputStream fis = new FileInputStream(projectPath+"//config//config.properties");
 		prop.load(fis);
 	}
-	
-	
-	public void loadApplication(String browser) 
+	public void loadApplication() 
 	{
-		//String browser = (String) prop.get("browser");
+		String browser = (String) prop.get("browser");
 		
 		if(browser.equalsIgnoreCase("chrome")) 
 		{

@@ -4,15 +4,17 @@
   <test thread-count="5" name="chrome">
   <parameter name="browser" value="chrome"></parameter>
     <classes>
-     
-      <class name="com.myecom.testcases.DemoTest"/>
+     <class name="com.myecom.testcases.IndexPageTest"/>
+     <class name="com.myecom.testcases.SignInPageTest"/>
+     <class name="com.myecom.testcases.DemoTest"/>
     </classes>
   </test> <!-- Test -->
   
   <test thread-count="5" name="firefox">
   <parameter name="browser" value="firefox"></parameter>
     <classes>
-      
+      <class name="com.myecom.testcases.IndexPageTest"/>
+      <class name="com.myecom.testcases.SignInPageTest"/>
       <class name="com.myecom.testcases.DemoTest"/>
     </classes>
   </test> <!-- Test -->
@@ -20,8 +22,9 @@
   <test thread-count="5" name="edge">
   <parameter name="browser" value="edge"></parameter>
     <classes>
-    
-      <class name="com.myecom.testcases.DemoTest"/>
+     <class name="com.myecom.testcases.IndexPageTest"/>
+     <class name="com.myecom.testcases.SignInPageTest"/>
+     <class name="com.myecom.testcases.DemoTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

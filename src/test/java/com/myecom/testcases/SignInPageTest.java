@@ -25,11 +25,11 @@ public class SignInPageTest extends BaseClass
 	ExcelSheethandle data;
 	SignInPageTest signintest;
 	
-	@Parameters("browser")
+	
 	@BeforeMethod
-	public void setUp(String browser) 
+	public void setUp() 
 	{
-		loadApplication(browser);
+		loadApplication();
 		driver.get(prop.getProperty("SignInPage"));
 		signin = new SignInPagePOM();
 		driver.manage().window().maximize();
