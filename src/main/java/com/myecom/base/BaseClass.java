@@ -11,7 +11,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 public class BaseClass 
 {
@@ -28,9 +30,10 @@ public class BaseClass
 		prop.load(fis);
 	}
 	
-	public void loadApplication() 
+	
+	public void loadApplication(String browser) 
 	{
-		String browser = (String) prop.get("browser");
+		//String browser = (String) prop.get("browser");
 		
 		if(browser.equalsIgnoreCase("chrome")) 
 		{
@@ -51,6 +54,12 @@ public class BaseClass
 		//driver.get(prop.getProperty("baseurl"));
 		//driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(10000)); //OR (page load timeout is used for performance testing)
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		
+	}
+
+
+	public void onTestSuccess(ITestResult result) {
+		// TODO Auto-generated method stub
 		
 	}
 	

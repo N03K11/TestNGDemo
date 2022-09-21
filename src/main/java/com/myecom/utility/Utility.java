@@ -18,10 +18,14 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.myecom.base.BaseClass;
 
 public class Utility extends BaseClass 
 {
+	
+	
 	public void applyExplicitWait(WebDriver driver, WebElement element) 
 	{
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -52,5 +56,7 @@ public class Utility extends BaseClass
 		FileUtils.copyFile(screenshot, location);
 		return destination;
 	}
+	
+	
 
 }
