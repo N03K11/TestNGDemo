@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
@@ -31,7 +32,7 @@ public class ExcelSheethandle extends BaseClass
 	
 	public HashMap<String, Object> getExcelSheetData(Sheet sh) 
 	{
-		int getRow = sh.getLastRowNum();
+		//int getRow = sh.getLastRowNum();
 		
 		HashMap<String, Object> data = new HashMap();
 		
@@ -68,32 +69,5 @@ public class ExcelSheethandle extends BaseClass
 		return value;
 	}
 	
-	/*public HashMap<String, Object> getExcelSheetData1(Sheet sh) 
-	{
-		HashMap<String, Object> data = new HashMap();
-		
-		for(int i=0; i<=sh.getLastRowNum(); i++) 
-		{ //row
-			int cellCount = sh.getRow(i).getLastCellNum();
-			
-			for(int j=0; j<cellCount; j++) 
-			{ //column
-				CellType ct = sh.getRow(i+1).getCell(j).getCellType();
-				switch(ct){
-					case STRING:
-						data.put(sh.getRow(0).getCell(j).getStringCellValue(), 
-								sh.getRow(i+1).getCell(j).getStringCellValue());
-						break;
-						
-					case NUMERIC:
-						
-						String sValue = String.valueOf((int)sh.getRow(i+1).getCell(j).getNumericCellValue());
-						data.put(sh.getRow(0).getCell(j).getStringCellValue(), sValue);
-						break;
-				}
-			}
-		} 
-		return data;
-	}*/
 
 }

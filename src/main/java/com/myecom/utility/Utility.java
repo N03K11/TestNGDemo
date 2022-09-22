@@ -32,7 +32,7 @@ public class Utility extends BaseClass
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
-	/*public void applyFluentWait(WebDriver driver, WebElement element) 
+	public void applyFluentWait(WebDriver driver, final WebElement element) 
 	{
 		Wait<WebDriver> wait = new FluentWait<WebDriver> (driver)
 				.withTimeout(Duration.ofSeconds(30))
@@ -45,7 +45,7 @@ public class Utility extends BaseClass
 				return element;
 			}
 		});
- 	}*/
+ 	}
 	
 	public static String screenShot(WebDriver driver, String name) throws IOException 
 	{

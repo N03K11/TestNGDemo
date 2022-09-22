@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Sheet;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -17,14 +18,15 @@ import com.myecom.base.BaseClass;
 import com.myecom.pom.SignInPagePOM;
 import com.myecom.pom.IndexPagePom;
 import com.myecom.utility.ExcelSheethandle;
+import com.myecom.utility.Utility;
 
 public class SignInPageTest extends BaseClass
 {
 	IndexPagePom index;
 	SignInPagePOM signin;
 	ExcelSheethandle data;
-	SignInPageTest signintest;
-	
+	//SignInPageTest signintest;
+	Utility ut;
 	
 	@BeforeMethod
 	public void setUp() 
@@ -32,12 +34,15 @@ public class SignInPageTest extends BaseClass
 		loadApplication();
 		driver.get(prop.getProperty("SignInPage"));
 		signin = new SignInPagePOM();
+		ut = new Utility();
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	}
 	
 	@AfterMethod
-	public void tearDown() 
+	public void tearDown()
 	{
+		
 		driver.quit();
 	}
 	
@@ -48,12 +53,13 @@ public class SignInPageTest extends BaseClass
 	}
 	
 	@Test
-	public void signInEmail() throws InterruptedException 
+	public void signInEmail() throws InterruptedException, IOException 
 	{
 		index = new IndexPagePom();
 		index.signinButton.click();
+		ut.screenShot(driver, "sign in");
 		signin.createEmail();
-		Thread.sleep(5000);
+		
 	}
 	
 	@Test
@@ -80,9 +86,13 @@ public class SignInPageTest extends BaseClass
 	{
 		signin.createEmail();
 		signin.clickOnCreate();
-		Thread.sleep(15000);
+		//Thread.sleep(15000);
+	}
+	
+	@Test
+	public void validateCreate() 
+	{
 		signin.validateCreateAccountPage();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	}
 	
 	@Test
@@ -114,13 +124,25 @@ public class SignInPageTest extends BaseClass
 		signin.createNewAccount(emaildata);
 		signin.clickOnCreate();
 		HashMap<String, Object> logindata = data.getExcelSheetData(s);
-		signin.signUpCreate((String)logindata.get("First Name"), (String)logindata.get("Last Name"), (String) logindata.get("Mobile Number"));
+		signin.signUpCreate((String)logindata.get("First Name"), (String)logindata.get("Last Name"), (String) logindata.get("Mobile Number"), (String) logindata.get("Password")
+				, (String) logindata.get("Company"), (String) logindata.get("Address"), (String) logindata.get("City"), (String) logindata.get("PinCode"), (String) logindata.get("Alias"));
 		Thread.sleep(3000);
 		signin.signUpDropDown();
-		Thread.sleep(3000);
+		signin.signUpCheckBoxes();
+		signin.create();
 	}
 	
-
+	@Test
+	public void womenMouseAction() 
+	{
+		signin.womenMouseHover();
+	}
+	
+	@Test
+	public void returnToHome() 
+	{
+		signin.returnHome();
+	}
 		
 		
 

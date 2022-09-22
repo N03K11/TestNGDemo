@@ -4,6 +4,7 @@ package com.myecom.pom;
 import java.time.Duration;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -16,6 +17,7 @@ import com.myecom.pom.IndexPagePom;
 public class SignInPagePOM extends BaseClass
 {
 	IndexPagePom index;
+	Actions act;
 	
 	
 	public SignInPagePOM()
@@ -113,6 +115,12 @@ public class SignInPagePOM extends BaseClass
 	@FindBy(id="submitAccount")
 	public WebElement submitAccount;
 	
+	@FindBy(xpath="//a[@title='Women']")
+	public WebElement women;
+	
+	@FindBy(xpath="//a[@class='home']")
+	public WebElement home;
+	
 	public String title = driver.getTitle();
 	
 	public void createEmail() 
@@ -141,7 +149,7 @@ public class SignInPagePOM extends BaseClass
 		boolean case1 = true;
 		Assert.assertTrue(case1);
 		//without putting assert still test case result is shown as passed
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	
 	}
 	
 	public void validateCreateAccountPage() 
@@ -163,12 +171,19 @@ public class SignInPagePOM extends BaseClass
 		
 	}
 	
-	public void signUpCreate(String firstname, String lastname, String number) 
+	public void signUpCreate(String firstname, String lastname, String number, String password, String comp, String add, String city1, String pin, String add2) 
 	{
 		female.click();
 		custFirstName.sendKeys(firstname);
 		custLastName.sendKeys(lastname);
 		phone_mobile.sendKeys(number);
+		passwd.sendKeys(password);
+		company.sendKeys(comp);
+		address1.sendKeys(add);
+		city.sendKeys(city1);
+		postcode.sendKeys(pin);
+		alias.sendKeys(add2);
+		
 	}
 	
 	public void signUpDropDown() 
@@ -181,6 +196,31 @@ public class SignInPagePOM extends BaseClass
 		
 		Select yearsel = new Select(years);
 		yearsel.selectByValue("2000");
+		
+		Select statesel = new Select(id_state);
+		statesel.selectByValue("32");
+	}
+	
+	public void signUpCheckBoxes() 
+	{
+		newsletter.click();
+		optin.click();
+	}
+	
+	public void create() 
+	{
+		submitAccount.click();
+	}
+	
+	public void womenMouseHover() 
+	{
+		act = new Actions(driver);
+		act.moveToElement(women);
+	}
+	
+	public void returnHome() 
+	{
+		home.click();
 	}
 
 }

@@ -2,36 +2,28 @@
 <testng-results ignored="9" total="10" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-21T13:31:22 IST" name="Default suite" finished-at="2022-09-21T13:32:04 IST" duration-ms="41708">
+  <suite started-at="2022-09-22T00:29:44 IST" name="Default suite" finished-at="2022-09-22T00:30:03 IST" duration-ms="18666">
     <groups>
     </groups>
-    <test started-at="2022-09-21T13:31:22 IST" name="Default test" finished-at="2022-09-21T13:32:04 IST" duration-ms="41708">
-      <class name="com.myecom.testcases.IndexPageTest">
-        <test-method is-config="true" signature="readProperty()[pri:0, instance:com.myecom.testcases.IndexPageTest@1151e434]" started-at="2022-09-21T13:31:22 IST" name="readProperty" finished-at="2022-09-21T13:31:22 IST" duration-ms="4" status="PASS">
+    <test started-at="2022-09-22T00:29:44 IST" name="Default test" finished-at="2022-09-22T00:30:03 IST" duration-ms="18666">
+      <class name="com.myecom.testcases.SignInPageTest">
+        <test-method is-config="true" signature="readProperty()[pri:0, instance:com.myecom.testcases.SignInPageTest@21e360a]" started-at="2022-09-22T00:29:44 IST" name="readProperty" finished-at="2022-09-22T00:29:44 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- readProperty -->
-        <test-method is-config="true" signature="generateExtentReport()[pri:0, instance:com.myecom.testcases.IndexPageTest@1151e434]" started-at="2022-09-21T13:31:22 IST" name="generateExtentReport" finished-at="2022-09-21T13:31:22 IST" duration-ms="228" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateExtentReport -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.myecom.testcases.IndexPageTest@1151e434]" started-at="2022-09-21T13:31:22 IST" name="setUp" finished-at="2022-09-21T13:31:40 IST" duration-ms="18094" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.myecom.testcases.SignInPageTest@21e360a]" started-at="2022-09-22T00:29:44 IST" name="setUp" finished-at="2022-09-22T00:30:03 IST" duration-ms="18327" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="createClick()[pri:0, instance:com.myecom.testcases.IndexPageTest@1151e434]" started-at="2022-09-21T13:31:40 IST" name="createClick" finished-at="2022-09-21T13:32:03 IST" duration-ms="22532" status="PASS">
+        <test-method signature="womenMouseAction()[pri:0, instance:com.myecom.testcases.SignInPageTest@21e360a]" started-at="2022-09-22T00:30:03 IST" name="womenMouseAction" finished-at="2022-09-22T00:30:03 IST" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createClick -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.myecom.testcases.IndexPageTest@1151e434]" started-at="2022-09-21T13:32:03 IST" name="tearDown" finished-at="2022-09-21T13:32:03 IST" duration-ms="400" status="PASS">
+        </test-method> <!-- womenMouseAction -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.myecom.testcases.SignInPageTest@21e360a]" started-at="2022-09-22T00:30:03 IST" name="tearDown" finished-at="2022-09-22T00:30:03 IST" duration-ms="296" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="flushReport()[pri:0, instance:com.myecom.testcases.IndexPageTest@1151e434]" started-at="2022-09-21T13:32:03 IST" name="flushReport" finished-at="2022-09-21T13:32:04 IST" duration-ms="415" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- flushReport -->
-      </class> <!-- com.myecom.testcases.IndexPageTest -->
+      </class> <!-- com.myecom.testcases.SignInPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -44,11 +44,11 @@ public class DemoTest extends BaseClass
 	public void test1() 
 	{
 		System.out.println("in test 1");
-		Assert.fail();
+		//Assert.fail();
 	}
 	
-	
-	@Test
+	@Parameters("browser")
+	@Test(groups = {"regression"})
 	public void test2() 
 	{
 		System.out.println("in test 2");
@@ -58,6 +58,18 @@ public class DemoTest extends BaseClass
 	public void test3() 
 	{
 		System.out.println("in test 3");
+	}
+	
+	@Test(groups = {"regression"})
+	public void test4() 
+	{
+		System.out.println("in test 4");
+	}
+	
+	@Test(invocationCount = 2)
+	public void test5() 
+	{
+		System.out.println("in test 5");
 	}
 
 }
